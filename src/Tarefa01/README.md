@@ -81,7 +81,7 @@ Consultar ganhos agrupado por cliente.
     - Para isolar o projeto em um ambiente de desevolvimento dedicado.
 
 - [DotEnv (.env)](https://www.dotenv.org/)
-    - Para armazenar as variáveis de ambiente e deixar dados sensíveis do projeto exposto (usuário e senha, por exemplo).
+    - Para armazenar as variáveis de ambiente e não deixar dados sensíveis do projeto expostos (usuário e senha, por exemplo).
 
 - [Git](https://git-scm.com/) e [Github](https://github.com/)
     - Git para fazer o versionamento do projeto e GitHub para hospedar e compartilhar o projeto.
@@ -93,12 +93,12 @@ Consultar ganhos agrupado por cliente.
     - Compose é uma ferramenta para definir e executar aplicativos Docker com vários contêineres. Com o Compose, você usa um arquivo YAML para configurar os serviços do seu aplicativo. Então, com um único comando, você cria e inicia todos os serviços da sua configuração.
 
 - [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
-    - Extensão para Microsoft Visual Studio Code para se conectar a instância do SGBD SQL Server
+    - Extensão para Microsoft Visual Studio Code para se conectar a instâncias do SGBD SQL Server
 
 ## Resolução
 
 ### SQL Server e Docker Compose
-Para a primeira entrega, que consiste em uma consulta para obter os ganhos agrupados por cliente, utilizamos o Docker e o Docker Compose para subir 2 imagens e então criar um banco de dados e as tabelas no SQL Server.
+Para a primeira entrega, que consiste em uma consulta para obter os ganhos agrupados por cliente, utilizaremos o Docker e o Docker Compose para subir 2 imagens e então criar um banco de dados e as tabelas no SQL Server.
  
  - Windows SQL Server
     - Para execução do SGBD SQL Server.
@@ -137,7 +137,7 @@ services:
     command: /bin/bash ./tmp/init-database.sh
 ```
 ### Execução
-Antes de executar o docker composes para subir os serviços, precisamos mudar a permisão do arquivo `create-db-and-tables.sql` para que seja permitido a execução dentro do container, para isso basta executar o seguinte comando:
+Antes de executar o docker composes para subir os serviços, precisamos mudar a permissão do arquivo `create-db-and-tables.sql` para que seja possível executá-lo dentro do container, para isso basta executar o seguinte comando:
 
 ``` bash
 chmod +x ./create-db-and-tables.sql
@@ -165,7 +165,7 @@ Logo em seguida podemos acessar o sqlcmd com o comando:
 ``` bash
 sqlcmd -S sqlserver -U sa -P ${SA_PASSWORD}
 ```
-A partir daqui podemos executar as queries. No entanto, para facilitar a execução e visualização dos dados, utilizaremos a extensão SQLTools, que vai nos permitir conectar no banco que estamos servido por meio do container.
+A partir daqui podemos executar as queries. No entanto, para facilitar a execução e visualização dos dados, utilizaremos a extensão SQLTools, que vai nos permitir conectar no banco que estamos servindo por meio do container.
 Com essa extensão é possível escrever e executar um arquivo com a nossa query e teremos uma visualização amigável dos dados:
 
 ![image](./img/tarefa01.png)
