@@ -154,7 +154,7 @@ Execução dos containeres a partir do docker-compose:
 ``` bash
 docker run -it mcr.microsoft.com/mssql-tools
 ```
-Assim que o container estive em execução e o banco de dados e as tabelas criadas e populadas, podemos entrar no modo interativo do container que possui a ferramenta sqlcmd para consultar os dados:
+Assim que o container estiver em execução e o banco de dados e as tabelas criadas e populadas, podemos entrar no modo interativo do container que possui a ferramenta `sqlcmd` para consultar os dados:
 
 ``` bash
 docker-compose run mssqltools bash
@@ -165,8 +165,8 @@ Logo em seguida podemos acessar o sqlcmd com o comando:
 ``` bash
 sqlcmd -S sqlserver -U sa -P ${SA_PASSWORD}
 ```
-A partir daqui podemos executar as queries. No entanto, para facilitar a execução e visualização dos dados, utilzaremos aqui o SQLTools, que vai nos permitir conectar no banco que estamos servido por meio do container.
-Com essa extensão é possível escrever um arquivo com a nossa query e teremos uma visualização amigável dos dados:
+A partir daqui podemos executar as queries. No entanto, para facilitar a execução e visualização dos dados, utilizaremos a extensão SQLTools, que vai nos permitir conectar no banco que estamos servido por meio do container.
+Com essa extensão é possível escrever e executar um arquivo com a nossa query e teremos uma visualização amigável dos dados:
 
 ![image](./img/tarefa01.png)
 
