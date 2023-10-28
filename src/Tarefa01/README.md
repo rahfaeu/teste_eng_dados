@@ -108,6 +108,8 @@ Para a primeira entrega, que consiste em uma consulta para obter os ganhos agrup
 A seguir temos o arquivo que irá definir e executar as imagens necessárias para a criação do banco de dados e executar as consultas.
 
 ``` yaml
+# file: docker-compose.yml
+
 version: '2.2'
 
 services:
@@ -141,6 +143,8 @@ chmod +x ./create-db-and-tables.sql
 
 Script para ser executado pelo docker-compose assim que o subir os serviço:
 ``` bash
+# file: create-db-and-tables.sql
+
 /opt/mssql-tools/bin/sqlcmd -S sqlserver -U sa -P ${SA_PASSWORD} -d master -i /tmp/create-db-and-tables.sql
 ```
 
@@ -167,6 +171,8 @@ Com essa extensão é possível escrever um arquivo com a nossa query e teremos 
 Query para obter o resultado esperado:
 
 ``` sql
+-- file: Consulta-ganho-total-por-cliente.sql
+
 select 
     cliente.nome as cliente_nome
     , round(
