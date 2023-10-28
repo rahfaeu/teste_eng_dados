@@ -19,6 +19,7 @@ O resultado esperado é uma consulta que retorne o ganho total da empresa por cl
 Utilize o script de criação do banco de dados e tabelas:
 
 ``` sql
+-- file: create-db-and-tables.sql
 create database desafio_engenheiro
 go
 use desafio_engenheiro
@@ -143,7 +144,7 @@ chmod +x ./create-db-and-tables.sql
 
 Script para ser executado pelo docker-compose assim que o subir os serviço:
 ``` bash
-# file: create-db-and-tables.sql
+# file: init-database.sh
 
 /opt/mssql-tools/bin/sqlcmd -S sqlserver -U sa -P ${SA_PASSWORD} -d master -i /tmp/create-db-and-tables.sql
 ```
