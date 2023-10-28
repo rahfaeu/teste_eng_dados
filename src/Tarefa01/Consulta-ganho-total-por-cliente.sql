@@ -4,7 +4,7 @@ select
         sum(
             (
                 contrato.percentual * (
-                    transacao.valor_total *(
+                    transacao.valor_total * (
                         1 - isnull(transacao.percentual_desconto, 0) / 100
                     )
                 )
