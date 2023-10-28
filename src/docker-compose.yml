@@ -1,0 +1,23 @@
+version: '2.2'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    env_file:
+      - .env
+    environment:
+      SA_PASSWORD: ${SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+  mssqltools:
+    env_file:
+      - .env
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - sqlserver
+    volumes:
+      - ./create-db-and-tables.sql:/tmp/create-db-and-tables.sql
+      - ./init-database.sh:/tmp/init-database.sh
+    command: /bin/bash ./tmp/init-database.sh
