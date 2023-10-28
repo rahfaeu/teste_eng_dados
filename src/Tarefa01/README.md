@@ -152,7 +152,7 @@ Script para ser executado pelo docker-compose assim que o subir os serviço:
 
 Execução dos containeres a partir do docker-compose:
 ``` bash
-docker run -it mcr.microsoft.com/mssql-tools
+docker-compose up -d
 ```
 Assim que o container estiver em execução e o banco de dados e as tabelas criadas e populadas, podemos entrar no modo interativo do container que possui a ferramenta `sqlcmd` para consultar os dados:
 
