@@ -137,7 +137,7 @@ services:
     command: /bin/bash ./tmp/init-database.sh
 ```
 ### Execução
-Antes de executar o docker composes para subir os serviços, precisamos mudar a permissão do arquivo `create-db-and-tables.sql` para que seja possível executá-lo dentro do container, para isso basta executar o seguinte comando:
+Antes de executar o docker compose para subir os serviços, precisamos mudar a permissão do arquivo `create-db-and-tables.sql` para que seja possível executá-lo dentro do container, para isso basta executar o seguinte comando:
 
 ``` bash
 chmod +x ./create-db-and-tables.sql
@@ -165,7 +165,7 @@ Logo em seguida podemos acessar o sqlcmd com o comando:
 ``` bash
 sqlcmd -S sqlserver -U sa -P ${SA_PASSWORD}
 ```
-A partir daqui podemos executar as queries. No entanto, para facilitar a execução e visualização dos dados, utilizaremos a extensão SQLTools, que vai nos permitir conectar no banco que estamos servindo por meio do container.
+A partir daqui podemos executar as queries. No entanto, para facilitar a execução e visualização dos dados, utilizaremos a extensão SQLTools, que vai nos permitir conectar ao banco que estamos servindo por meio do container.
 Com essa extensão é possível escrever e executar um arquivo com a nossa query e teremos uma visualização amigável dos dados:
 
 ![image](./img/tarefa01.png)
@@ -190,8 +190,8 @@ select
         , 2
     ) as valor
 from contrato
-    inner join transacao on contrato.contrato_id = transacao.contrato_id
-    inner join cliente on contrato.cliente_id = cliente.cliente_id
+inner join transacao on contrato.contrato_id = transacao.contrato_id
+inner join cliente on contrato.cliente_id = cliente.cliente_id
 where contrato.ativo = 'true'
 group by cliente.nome
 ```
