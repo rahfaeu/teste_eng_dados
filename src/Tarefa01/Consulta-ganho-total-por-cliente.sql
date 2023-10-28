@@ -13,7 +13,7 @@ select
         , 2
     ) as valor
 from contrato
-    inner join transacao on contrato.contrato_id = transacao.contrato_id
-    inner join cliente on contrato.cliente_id = cliente.cliente_id
+inner join transacao on contrato.contrato_id = transacao.contrato_id
+inner join cliente on contrato.cliente_id = cliente.cliente_id
 where contrato.ativo = 'true'
 group by cliente.nome
