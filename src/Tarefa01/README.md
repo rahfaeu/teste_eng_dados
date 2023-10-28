@@ -20,6 +20,7 @@ Utilize o script de criação do banco de dados e tabelas:
 
 ``` sql
 -- file: create-db-and-tables.sql
+
 create database desafio_engenheiro
 go
 use desafio_engenheiro
