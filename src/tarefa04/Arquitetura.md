@@ -1,4 +1,4 @@
-# Tarefa 03
+# Tarefa 04
 ---
 A quarta tarefa consiste consumir os Json das notas fiscais que são disponibilizados em uma API. Como você utilizaria as tecnologias da GCP para ingerir, transformar e, eventualmente, carregar esses dados em um BigTable? O quarto entregável consiste na construção de uma arquitetura de ingestão dos dados de nota fiscal do entregável anterior (como visto [aqui](https://www.crystalloids.com/hs-fs/hubfs/Screenshot%202022-02-04%20at%2009-44-40-png.png?width=1232&name=Screenshot%202022-02-04%20at%2009-44-40-png.png"), a qual deve atender aos seguintes pontos:
 
