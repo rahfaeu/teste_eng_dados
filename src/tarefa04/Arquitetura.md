@@ -45,9 +45,20 @@ Caso exista a possibilidade/necessidade de executar um pipeline em modo de strea
 ![image](./img/arquitetura-sugerida.png)
 
 O que diferencia aqui, é que teremos uma perna depois do Cloud Function que irá capturar os eventos por meio do Pub Sub, é que um serviço de mensageria assíncrono.
+No entanto, o orquestrador do pipeline de modo streaming deveria ser o dataflow, tendo em vistar que o composer foi concebido para orquestrar processamentos em batch idealmente.
+É extremamente importante pensar em custo, já que quando falamos de dados em tempo real, devemos considerar um custo elevado comparado ao processamento em lote.
 
 ### Versionamento do projeto
 Idealmente o projeto deve ser versionado com as ferramentas com este propósito, como Git, e hospedado em um servidor como Github ou GitLab.
 
+### Backlog
+Se tivesse mais tempo, o que você faria para melhorar a sua solução?
+
+Com mais tempo, esboçaria a camada delivery, demonstrando o motivo do Bigquery, Looker e Data Studio estarem sendo considerados no diagrama.
+
+Poderia sugerir o uso ferramentas Data Builders como DBT, ou o propróio Dataform que foi incorporado como recurso nativo dentro da stack do GCP. Essa ferramentas fariam o etapa de transformação para a camada delivery
+
+#### Definição de Dataowner
+Seguinte o conceito de govença, faria todo o projeto pautado no levantamento prévio de dataowners do projeto, permitindo assim a melhor gestão e responsabilidade sobre os dados.
 
 
